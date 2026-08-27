@@ -1,0 +1,24 @@
+lqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqklqqqqqqqqqqqqqqqqqqSeen 12/Used  9k
+x Time:        2026-08-26T14:17:51.000Z (0) xxGNSS   PRN  Elev   Azim   SNR Usex
+x Latitude:         41.71343333 N           xxGP  5    5  29.0   64.0  33.0  Y x
+x Longitude:        91.66269000 W           xxGP 10   10  15.0  260.0  45.0  Y x
+x Alt (HAE, MSL):    198.400,    231.900 m  xxGP 15   15  75.0  104.0  24.0  Y x
+x Speed:             0.08 km/h              xxGP 16   16   6.0  297.0  29.0  Y x
+x Track (true, var):    63.5,  -0.9     deg xxGP 18   18  73.0  328.0  40.0  Y x
+x Climb:             0.00 m/min             xxGP 20   20  46.0   56.0  28.0  Y x
+x Status:         3D DGPS FIX (6 secs)      xxGP 23   23  44.0  273.0  46.0  Y x
+x Long Err  (XDOP, EPX):  0.56, +/-  2.1 m  xxGP 24   24  15.0  141.0  19.0  Y x
+x Lat Err   (YDOP, EPY):  0.81, +/-  3.0 m  xxGP 27   27   8.0  324.0  31.0  Y x
+x Alt Err   (VDOP, EPV):  0.75, +/-  4.3 m  xxGP 29   29  38.0  191.0  25.0  N x
+x 2D Err    (HDOP, CEP):  0.97, +/-  4.0 m  xxGP 30   30   3.0   34.0  29.0  N x
+x 3D Err    (PDOP, SEP):  1.23, +/-  5.8 m  xxSB133   46  28.0  229.0  47.0  N x
+x Time Err  (TDOP):       0.69              xx                                 x
+x Geo Err   (GDOP):       1.65              xx                                 x
+x ECEF X, VX:              n/a    n/a       xx                                 x
+x ECEF Y, VY:              n/a    n/a       xx                                 x
+x ECEF Z, VZ:              n/a    n/a       xx                                 x
+x Speed Err (EPS):       +/- 21.9 km/h      xx                                 x
+x Track Err (EPD):        n/a               xx                                 x
+x Time offset:            1.001503501 s     xx                                 x
+x Grid Square:            EN41er01          xx                                 x
+mqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqjmqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqj

@@ -1,0 +1,75 @@
+# StratumTap --- web front end for a GPS-disciplined chrony NTP server.
+# Installed by deploy/install.sh to /etc/systemd/system/stratumtap.service
+#
+#   systemctl status stratumtap
+#   journalctl -u stratumtap -f
+#
+# Configuration lives in /etc/default/stratumtap (STRATUMTAP_* variables).
+
+[Unit]
+Description=StratumTap --- GPS/NTP status web UI
+Documentation=https://github.com/eholzhueter/StratumTap
+After=network-online.target chrony.service gpsd.service
+Wants=network-online.target
+# Never give up: keep retrying forever rather than entering the "failed" state
+# after systemd's default 5-starts-in-10-s limit. Combined with Restart=always
+# below, the service comes back on its own after a crash, an OOM kill, or a
+# transient dependency problem, and a fix (e.g. re-running install.sh) takes
+# effect on the next retry without manual `systemctl start`.
+StartLimitIntervalSec=0
+
+[Service]
+Type=exec
+User=stratumtap
+Group=stratumtap
+# Lets chronyc reach chronyd over /run/chrony/chronyd.sock where the local
+# config permits it. Harmless otherwise: chronyc falls back to UDP 323 on
+# loopback, which Debian's default chrony.conf allows for any local user.
+SupplementaryGroups=_chrony
+
+WorkingDirectory=/opt/stratumtap/app
+EnvironmentFile=-/etc/default/stratumtap
+ExecStart=/opt/stratumtap/venv/bin/python -m stratumtap
+
+# Restart after ANY exit, including clean ones (a stray SIGTERM, `kill`, a
+# packaging hook) --- the only way to stop it for good is `systemctl stop`.
+Restart=always
+RestartSec=5
+TimeoutStopSec=10
+KillMode=mixed
+
+# --- Logging -------------------------------------------------------------
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=stratumtap
+
+# --- Hardening -----------------------------------------------------------
+# The service only ever READS: it runs `chronyc` (UDP 323 on loopback, or the
+# AF_UNIX socket in /run/chrony) and speaks TCP to gpsd on 127.0.0.1:2947.
+# It writes no files. Do NOT add IPAddressDeny= and do not drop AF_INET or
+# AF_UNIX from RestrictAddressFamilies= --- either would break both collectors.
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+ProtectClock=yes
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+RestrictNamespaces=yes
+RestrictRealtime=yes
+RestrictSUIDSGID=yes
+LockPersonality=yes
+MemoryDenyWriteExecute=yes
+SystemCallArchitectures=native
+RemoveIPC=yes
+CapabilityBoundingSet=
+
+# To serve on a privileged port (e.g. STRATUMTAP_PORT=80) uncomment BOTH lines:
+#CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+#AmbientCapabilities=CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=multi-user.target

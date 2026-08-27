@@ -1,0 +1,13 @@
+{
+  "name": "stratumtap-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Vendoring helper for the StratumTap SPA. The frontend itself has no build step.",
+  "scripts": {
+    "vendor": "node scripts/vendor.mjs"
+  },
+  "devDependencies": {
+    "leaflet": "1.9.4"
+  }
+}

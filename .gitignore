@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+dist/
+build/
+
+# Node (only used to vendor frontend libs)
+node_modules/
+
+# Local config / runtime
+.env
+*.log
+/data/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+.DS_Store

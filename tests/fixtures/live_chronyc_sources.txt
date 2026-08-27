@@ -1,0 +1,17 @@
+
+  .-- Source mode  '^' = server, '=' = peer, '#' = local clock.
+ / .- Source state '*' = current best, '+' = combined, '-' = not combined,
+| /             'x' = may be in error, '~' = too variable, '?' = unusable.
+||                                                 .- xxxx [ yyyy ] +/- zzzz
+||      Reachability register (octal) -.           |  xxxx = adjusted offset,
+||      Log2(Polling interval) --.      |          |  yyyy = measured offset,
+||                                \     |          |  zzzz = estimated error.
+||                                 |    |           \
+MS Name/IP address         Stratum Poll Reach LastRx Last sample               
+===============================================================================
+#x NMEA                          0   0   377     1    -13ms[  -13ms] +/- 1000us
+#* PPS                           0   3   377     7   -813ns[-1509ns] +/-  350ns
+^? time-b-wwv.nist.gov           1  10   377   255  -1878us[-1877us] +/-   14ms
+^? time.cloudflare.com           3  10   377   417  +1345us[+1349us] +/-   18ms
+^? india.colorado.edu            0  10     0     -     +0ns[   +0ns] +/-    0ns
+^? 10.0.0.24                     0  10   377     -     +0ns[   +0ns] +/-    0ns

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="GPS-disciplined NTP server status: time sync, satellites, position and history.">
+  <title>StratumTap</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🛰️</text></svg>">
+  <link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="/css/app.css">
+  <script>
+    // Stamp the saved theme before first paint so the page never flashes the
+    // wrong background. Mirrors store.js's key and shape.
+    try {
+      var s = JSON.parse(localStorage.getItem('stratumtap.settings.v1') || '{}');
+      if (s.theme === 'light' || s.theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', s.theme);
+      }
+    } catch (e) { /* storage blocked — fall back to prefers-color-scheme */ }
+  </script>
+</head>
+<body>
+  <a class="visually-hidden" href="#view">Skip to content</a>
+  <div id="app-header"></div>
+  <main id="view" aria-label="Status"></main>
+  <p class="footer-note">
+    Data from <code>gpsd</code> and <code>chronyc</code> ·
+    <a href="/api/v1/status">/api/v1/status</a> ·
+    <a href="/docs">API docs</a>
+  </p>
+  <!-- Leaflet ships as a classic script; it defines the global L used by components/map.js. -->
+  <script src="/vendor/leaflet/leaflet.js"></script>
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

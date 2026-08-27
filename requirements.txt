@@ -1,0 +1,28 @@
+# Runtime dependencies for stratumtap.
+# Fully pinned (direct + transitive) so /opt/stratumtap/venv is reproducible.
+# Verified against PyPI metadata on 2026-08-27; all support Python 3.11-3.13 with wheels
+# including linux armv7l/aarch64 for pydantic-core (Raspberry Pi targets).
+#
+# NOTE: uvicorn is installed WITHOUT the [standard] extra on purpose --- uvloop and
+# httptools ship no armv7l wheels and would force a source build on a Pi.
+
+# --- direct ---
+fastapi==0.141.1
+uvicorn==0.52.4
+pydantic==2.13.4
+pydantic-settings==2.15.0
+aiomqtt==2.5.1              # optional MQTT publisher; inert unless STRATUMTAP_MQTT_URL is set
+
+# --- transitive (resolved from the above) ---
+annotated-doc==0.0.5        # fastapi
+annotated-types==0.8.0      # pydantic
+anyio==4.14.2               # starlette
+click==8.5.0                # uvicorn
+h11==0.16.0                 # uvicorn
+idna==3.19                  # anyio
+paho-mqtt==2.1.0            # aiomqtt (requires >=2.1.0,<3.0.0)
+pydantic-core==2.46.4       # pydantic (pinned exactly by pydantic itself)
+python-dotenv==1.2.3        # pydantic-settings
+starlette==1.6.0            # fastapi
+typing-extensions==4.16.0   # fastapi, pydantic, starlette
+typing-inspection==0.4.4    # fastapi, pydantic, pydantic-settings

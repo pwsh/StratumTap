@@ -1,0 +1,17 @@
+                             .- Number of sample points in measurement set.
+                            /    .- Number of residual runs with same sign.
+                           |    /    .- Length of measurement set (time).
+                           |   |    /      .- Est. clock freq error (ppm).
+                           |   |   |      /           .- Est. error in freq.
+                           |   |   |     |           /         .- Est. offset.
+                           |   |   |     |          |          |   On the -.
+                           |   |   |     |          |          |   samples. \
+                           |   |   |     |          |          |             |
+Name/IP Address            NP  NR  Span  Frequency  Freq Skew  Offset  Std Dev
+==============================================================================
+NMEA                       58  36    57    +99.236    115.649    -12ms  4213us
+PPS                         9   5    64     -0.002      0.127    -10ns  1176ns
+time-b-wwv.nist.gov         7   4  103m     -0.039      0.185  -1967us   128us
+time.cloudflare.com         6   4  103m     -0.092      0.221  +1417us   128us
+india.colorado.edu          0   0     0     +0.000   2000.000     +0ns  4000ms
+10.0.0.24                   0   0     0     +0.000   2000.000     +0ns  4000ms

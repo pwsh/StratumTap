@@ -1,0 +1,83 @@
+# Jekyll configuration for the StratumTap documentation site.
+#
+# Published with GitHub Pages from the /docs folder of the repository.
+# GitHub builds the site; there is no local build tooling to install.
+
+title: StratumTap
+description: >-
+  Web front end and JSON API for a GPS-disciplined chrony NTP server.
+
+# UPDATE THESE if you fork or rename the repository. `baseurl` must match the
+# repository name for a project site (https://<user>.github.io/<repo>/); set it
+# to "" for a user/organization site or a custom domain.
+url: https://eholzhueter.github.io
+baseurl: /StratumTap
+
+remote_theme: just-the-docs/just-the-docs
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-relative-links
+  - jekyll-seo-tag
+
+# Rewrites relative links to .md files into real page URLs. Enabled by default
+# on GitHub Pages; listed here so the behavior is explicit.
+relative_links:
+  enabled: true
+  collections: false
+
+# --- just-the-docs options -----------------------------------------------
+color_scheme: dark
+search_enabled: true
+search:
+  heading_level: 3
+  previews: 2
+  tokenizer_separator: /[\s\-/]+/
+
+heading_anchors: true
+
+# Callout styles used throughout these pages as:
+#     {: .note }
+#     > text
+callouts_level: quiet
+callouts:
+  note:
+    title: Note
+    color: blue
+  warning:
+    title: Warning
+    color: red
+
+# jekyll-remote-theme does not merge a theme's own _config.yml, so give every
+# page the theme's "default" layout explicitly.
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# UPDATE THIS to the real repository URL.
+aux_links:
+  StratumTap on GitHub:
+    - https://github.com/eholzhueter/StratumTap
+aux_links_new_tab: true
+
+back_to_top: true
+back_to_top_text: Back to top
+
+footer_content: >-
+  StratumTap is released under the MIT License.
+  Screenshots were captured in demo mode with synthetic data at Greenwich.
+
+# Show an "Edit this page on GitHub" link. UPDATE the repository below.
+gh_edit_link: true
+gh_edit_link_text: Edit this page on GitHub
+gh_edit_repository: https://github.com/eholzhueter/StratumTap
+gh_edit_branch: main
+gh_edit_source: docs
+gh_edit_view_mode: tree
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
