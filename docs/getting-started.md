@@ -50,7 +50,7 @@ the live stream. It needs no GPS receiver and no chrony, so you can run it on yo
 first.
 
 ```sh
-git clone https://github.com/eholzhueter/StratumTap.git
+git clone https://github.com/pwsh/StratumTap.git
 cd StratumTap
 make demo            # creates ./.venv, installs, runs with synthetic data
 ```

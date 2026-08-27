@@ -8,7 +8,7 @@
 
 [Unit]
 Description=StratumTap --- GPS/NTP status web UI
-Documentation=https://github.com/eholzhueter/StratumTap
+Documentation=https://github.com/pwsh/StratumTap
 After=network-online.target chrony.service gpsd.service
 Wants=network-online.target
 # Never give up: keep retrying forever rather than entering the "failed" state

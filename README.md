@@ -8,7 +8,7 @@ versioned JSON API. It is a single Python process with a handful of dependencies
 frontend build step — it reads gpsd's JSON socket directly and runs `chronyc` for NTP state,
 so it never scrapes curses output.
 
-**[Documentation](https://eholzhueter.github.io/StratumTap/)** — installation, user guide,
+**[Documentation](https://pwsh.github.io/StratumTap/)** — installation, user guide,
 API reference and technical articles. (Sources in [`docs/`](docs/).)
 
 ## Features
@@ -64,7 +64,7 @@ Captured in demo mode (`STRATUMTAP_DEMO=1`, synthetic data at Greenwich).
 Requires Python 3.11 or newer (tested on Debian 12 / Python 3.11 and Debian 13 / Python 3.13).
 
 ```sh
-git clone https://github.com/eholzhueter/StratumTap.git
+git clone https://github.com/pwsh/StratumTap.git
 cd StratumTap
 make demo            # creates ./.venv, installs, runs with synthetic data
 ```

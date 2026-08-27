@@ -10,7 +10,7 @@ description: >-
 # UPDATE THESE if you fork or rename the repository. `baseurl` must match the
 # repository name for a project site (https://<user>.github.io/<repo>/); set it
 # to "" for a user/organization site or a custom domain.
-url: https://eholzhueter.github.io
+url: https://pwsh.github.io
 baseurl: /StratumTap
 
 remote_theme: just-the-docs/just-the-docs
@@ -59,7 +59,7 @@ defaults:
 # UPDATE THIS to the real repository URL.
 aux_links:
   StratumTap on GitHub:
-    - https://github.com/eholzhueter/StratumTap
+    - https://github.com/pwsh/StratumTap
 aux_links_new_tab: true
 
 back_to_top: true
@@ -72,7 +72,7 @@ footer_content: >-
 # Show an "Edit this page on GitHub" link. UPDATE the repository below.
 gh_edit_link: true
 gh_edit_link_text: Edit this page on GitHub
-gh_edit_repository: https://github.com/eholzhueter/StratumTap
+gh_edit_repository: https://github.com/pwsh/StratumTap
 gh_edit_branch: main
 gh_edit_source: docs
 gh_edit_view_mode: tree

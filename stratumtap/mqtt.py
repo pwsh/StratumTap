@@ -42,7 +42,7 @@ log = logging.getLogger("stratumtap.mqtt")
 MANUFACTURER = "StratumTap"
 MODEL = "GPS-disciplined NTP monitor"
 ORIGIN_NAME = "StratumTap"
-ORIGIN_URL = "https://github.com/eholzhueter/StratumTap"
+ORIGIN_URL = "https://github.com/pwsh/StratumTap"
 
 #: Seeds the default device id when it is readable.
 MACHINE_ID_PATH = "/etc/machine-id"

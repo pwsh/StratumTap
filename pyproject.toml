@@ -45,8 +45,8 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/eholzhueter/StratumTap"
-Documentation = "https://github.com/eholzhueter/StratumTap/blob/main/docs/api-contract.md"
+Homepage = "https://github.com/pwsh/StratumTap"
+Documentation = "https://github.com/pwsh/StratumTap/blob/main/docs/api-contract.md"
 
 [project.scripts]
 stratumtap = "stratumtap.__main__:main"

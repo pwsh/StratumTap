@@ -213,7 +213,7 @@ Abbreviated to three of the twenty components; the rest follow the same shape:
     "sw": "0.1.0",
     "cu": "http://stratum1:8080/"
   },
-  "o": { "name": "StratumTap", "sw": "0.1.0", "url": "https://github.com/eholzhueter/StratumTap" },
+  "o": { "name": "StratumTap", "sw": "0.1.0", "url": "https://github.com/pwsh/StratumTap" },
   "availability_topic": "stratumtap/a1b2c3d4e5f6/status",
   "state_topic": "stratumtap/a1b2c3d4e5f6/state",
   "qos": 0,
