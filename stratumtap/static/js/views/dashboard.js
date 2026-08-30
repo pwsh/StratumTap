@@ -156,7 +156,8 @@ export function mount(root, ctx) {
       pillsRow.append(pill('NTP', sync ? `Synchronized · stratum ${n.stratum ?? F.DASH}` : 'Not synchronized',
         { state: sync ? 'good' : 'critical' }));
       pillsRow.append(pill('Reference', `${n.reference_name || F.DASH}`,
-        { title: n.reference_id ? `Reference ID ${n.reference_id}` : null }));
+        { state: sync && n.reference_name ? 'good' : null,
+          title: n.reference_id ? `Reference ID ${n.reference_id}` : null }));
       pillsRow.append(pill('Leap', n.leap_status || F.DASH,
         { state: n.leap_status === 'Normal' ? 'good' : n.leap_status ? 'warning' : null }));
     } else {
@@ -170,7 +171,12 @@ export function mount(root, ctx) {
         state: has ? 'good' : 'warning',
         title: F.isNum(fix.fix_age_s) ? `mode unchanged for ${F.duration(fix.fix_age_s)}` : null,
       }));
-      if (F.isNum(fix.fix_age_s)) pillsRow.append(pill('Fix age', F.duration(fix.fix_age_s)));
+      if (F.isNum(fix.fix_age_s)) {
+        pillsRow.append(pill('Fix age', F.duration(fix.fix_age_s), {
+          state: has ? (fix.fix_age_s >= 60 ? 'good' : 'warning') : null,
+          title: 'Time since the fix mode last changed \u2014 longer means a stable fix',
+        }));
+      }
       const sats = g.satellites || {};
       pillsRow.append(pill('Satellites', `${sats.used ?? F.DASH}/${sats.seen ?? F.DASH} used`, {
         state: F.isNum(sats.used) ? (sats.used >= 4 ? 'good' : 'warning') : null,
